@@ -21,4 +21,5 @@ $ vncserver :1
 
 On laptop
 
-
+##ssh to pi
+Connect with Putty, just enter hostname, use username "pi" and password "raspberry"
