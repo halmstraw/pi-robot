@@ -9,6 +9,9 @@ http://chojayr.blogspot.co.uk/
 ##Control 2 motor robot script
 https://github.com/chojayr/Pi-dro
 
+##Servo Driver board wiring
+http://www.lediouris.net/RaspberryPI/servo/readme.html
+
 ##vnc setup
 On pi install
 
