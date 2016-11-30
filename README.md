@@ -17,6 +17,7 @@ https://learn.adafruit.com/adafruit-16-channel-servo-driver-with-raspberry-pi/ov
 
 ##DC Motor scripts from adafruit
 https://learn.adafruit.com/adafruit-dc-and-stepper-motor-hat-for-raspberry-pi/using-dc-motors
+https://learn.adafruit.com/micropython-hardware-pca9685-dc-motor-and-stepper-driver/software
 
 ##vnc setup
 On pi install
