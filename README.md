@@ -15,6 +15,9 @@ http://www.lediouris.net/RaspberryPI/servo/readme.html
 ##Servo python scripts from adafruit
 https://learn.adafruit.com/adafruit-16-channel-servo-driver-with-raspberry-pi/overview
 
+##DC Motor scripts from adafruit
+https://learn.adafruit.com/adafruit-dc-and-stepper-motor-hat-for-raspberry-pi/using-dc-motors
+
 ##vnc setup
 On pi install
 
