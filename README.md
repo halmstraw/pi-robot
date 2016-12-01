@@ -1,5 +1,8 @@
 # pi-robot
 
+Great wiring view for the pi
+https://pinout.xyz/
+
 ##Getting wiimote working
 http://www.theraspberrypiguy.com/raspberry-pi-how-to-use-a-wiimote/
 
