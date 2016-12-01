@@ -11,6 +11,7 @@ https://github.com/chojayr/Pi-dro
 
 ##Servo Driver board wiring
 http://www.lediouris.net/RaspberryPI/servo/readme.html
+The chip needs 3v, the motor uses 5v, can power the motors from the pi as we don't use them much
 
 ##Servo python scripts from adafruit
 https://learn.adafruit.com/adafruit-16-channel-servo-driver-with-raspberry-pi/overview
