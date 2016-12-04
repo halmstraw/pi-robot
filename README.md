@@ -70,5 +70,5 @@ start the camera module
     raspistill --nopreview -w 640 -h 480 -q 5 -o /tmp/stream/pic.jpg -tl 100 -t 9999999 -th 0:0:0 &'
     
 start mjpg-streamer for raspberry pi camera module. This streams using ‘input_file.so’
-'LD_LIBRARY_PATH=/usr/local/lib  
-    mjpg_streamer -i "input_file.so -f /tmp/stream -n pic.jpg" -o "output_http.so -w /usr/local/www"'
+export LD_LIBRARY_PATH=/usr/local/lib  
+mjpg_streamer -i "input_file.so -f /tmp/stream -n pic.jpg" -o "output_http.so -w /usr/local/www"
