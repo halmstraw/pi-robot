@@ -1,5 +1,8 @@
 # pi-robot
 
+Great wiring view for the pi
+https://pinout.xyz/
+
 ##Getting wiimote working
 http://www.theraspberrypiguy.com/raspberry-pi-how-to-use-a-wiimote/
 
@@ -11,6 +14,14 @@ https://github.com/chojayr/Pi-dro
 
 ##Servo Driver board wiring
 http://www.lediouris.net/RaspberryPI/servo/readme.html
+The chip needs 3v, the motor uses 5v, can power the motors from the pi as we don't use them much
+
+##Servo python scripts from adafruit
+https://learn.adafruit.com/adafruit-16-channel-servo-driver-with-raspberry-pi/overview
+
+##DC Motor scripts from adafruit
+https://learn.adafruit.com/adafruit-dc-and-stepper-motor-hat-for-raspberry-pi/using-dc-motors
+https://learn.adafruit.com/micropython-hardware-pca9685-dc-motor-and-stepper-driver/software
 
 ##vnc setup
 On pi install
@@ -59,5 +70,5 @@ start the camera module
     raspistill --nopreview -w 640 -h 480 -q 5 -o /tmp/stream/pic.jpg -tl 100 -t 9999999 -th 0:0:0 &'
     
 start mjpg-streamer for raspberry pi camera module. This streams using ‘input_file.so’
-'LD_LIBRARY_PATH=/usr/local/lib  
-    mjpg_streamer -i "input_file.so -f /tmp/stream -n pic.jpg" -o "output_http.so -w /usr/local/www"'
+export LD_LIBRARY_PATH=/usr/local/lib  
+mjpg_streamer -i "input_file.so -f /tmp/stream -n pic.jpg" -o "output_http.so -w /usr/local/www"
