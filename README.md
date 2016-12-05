@@ -72,3 +72,17 @@ start the camera module
 start mjpg-streamer for raspberry pi camera module. This streams using ‘input_file.so’
 export LD_LIBRARY_PATH=/usr/local/lib  
 mjpg_streamer -i "input_file.so -f /tmp/stream -n pic.jpg" -o "output_http.so -w /usr/local/www"
+
+##Motion WebCamera Server setup
+https://www.raspberrypi.org/forums/viewtopic.php?f=43&t=44966&start=350
+
+Following this instructions made motion working on a latest released jessie on rpi2:
+
+sudo apt-get install -y libjpeg-dev libavformat56 libavformat-dev libavcodec56 libavcodec-dev libavutil54 libavutil-dev libc6-dev zlib1g-dev libmysqlclient18 libmysqlclient-dev libpq5 libpq-dev
+
+wget https://www.dropbox.com/s/6ruqgv1h65zufr6/motion-mmal-lowflyerUK-20151114.tar.gz
+
+tar -zxvf motion-mmal-lowflyerUK-20151114.tar.gz
+./motion -c motion-mmalcam-both.conf
+
+
