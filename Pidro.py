@@ -26,6 +26,9 @@ GPIO.setup(STBY, GPIO.OUT)
 GPIO.setup(PWMA, GPIO.OUT)
 GPIO.setup(PWMB, GPIO.OUT)
 
+state = GPIO.input(PWMA)
+print state
+
 global hadEvent
 global moveUp
 global moveDown
@@ -54,83 +57,83 @@ def PygameHandler(events):
     global moveRight
     global moveQuit
 
-	# Handle each event individually
+    # Handle each event individually
     for event in events:
-	if event.type == pygame.QUIT:
-	    # User exit
-	    hadEvent = True
-	    moveQuit = True
-	elif event.type == pygame.KEYDOWN:
-	    # A key has been pressed, see if it is one we want
-	    hadEvent = True
-	    if event.key == pygame.K_UP:
-	        moveUp = True
-	    elif event.key == pygame.K_DOWN:
-	        moveDown = True
-	    elif event.key == pygame.K_LEFT:
-	        moveLeft = True
-	    elif event.key == pygame.K_RIGHT:
- 	        moveRight = True
-	    elif event.key == pygame.K_ESCAPE:
-	        moveQuit = True
-	elif event.type == pygame.KEYUP:
-	    # A key has been released, see if it is one we want
-	    hadEvent = True
-	    if event.key == pygame.K_UP:
-	        moveUp = False
-	    elif event.key == pygame.K_DOWN:
-	        moveDown = False
-	    elif event.key == pygame.K_LEFT:
-	        moveLeft = False
-	    elif event.key == pygame.K_RIGHT:
-	        moveRight = False
-	    elif event.key == pygame.K_ESCAPE:
-	        moveQuit = False
+        if event.type == pygame.QUIT:
+            # User exit
+            hadEvent = True
+            moveQuit = True
+        elif event.type == pygame.KEYDOWN:
+            # A key has been pressed, see if it is one we want
+            hadEvent = True
+            if event.key == pygame.K_UP:
+                moveUp = True
+            elif event.key == pygame.K_DOWN:
+                moveDown = True
+            elif event.key == pygame.K_LEFT:
+                moveLeft = True
+            elif event.key == pygame.K_RIGHT:
+                moveRight = True
+            elif event.key == pygame.K_ESCAPE:
+                moveQuit = True
+        elif event.type == pygame.KEYUP:
+            # A key has been released, see if it is one we want
+            hadEvent = True
+            if event.key == pygame.K_UP:
+                moveUp = False
+            elif event.key == pygame.K_DOWN:
+                moveDown = False
+            elif event.key == pygame.K_LEFT:
+                moveLeft = False
+            elif event.key == pygame.K_RIGHT:
+                moveRight = False
+            elif event.key == pygame.K_ESCAPE:
+                moveQuit = False
 
 def forward():
-	(GPIO.output(AIN1, GPIO.HIGH))
-	(GPIO.output(AIN2, GPIO.LOW))
-	(GPIO.output(BIN1, GPIO.HIGH))
-	(GPIO.output(BIN2, GPIO.LOW))
-	(GPIO.output(STBY, GPIO.HIGH))
-	(GPIO.output(PWMA, GPIO.HIGH))
-	(GPIO.output(PWMB, GPIO.HIGH))
+    (GPIO.output(AIN1, GPIO.LOW))
+    (GPIO.output(AIN2, GPIO.HIGH))
+    (GPIO.output(BIN1, GPIO.HIGH))
+    (GPIO.output(BIN2, GPIO.LOW))
+    (GPIO.output(STBY, GPIO.HIGH))
+    (GPIO.output(PWMA, GPIO.HIGH))
+    (GPIO.output(PWMB, GPIO.HIGH))
 
 def reverse():
-	(GPIO.output(AIN1, GPIO.LOW))
-	(GPIO.output(AIN2, GPIO.HIGH))
-	(GPIO.output(BIN1, GPIO.LOW))
-	(GPIO.output(BIN2, GPIO.HIGH))
-	(GPIO.output(STBY, GPIO.HIGH))
-	(GPIO.output(PWMA, GPIO.HIGH))
-	(GPIO.output(PWMB, GPIO.HIGH))
+    (GPIO.output(AIN1, GPIO.HIGH))
+    (GPIO.output(AIN2, GPIO.LOW))
+    (GPIO.output(BIN1, GPIO.LOW))
+    (GPIO.output(BIN2, GPIO.HIGH))
+    (GPIO.output(STBY, GPIO.HIGH))
+    (GPIO.output(PWMA, GPIO.HIGH))
+    (GPIO.output(PWMB, GPIO.HIGH))
 
 def left():
-	(GPIO.output(AIN1, GPIO.HIGH))
-	(GPIO.output(AIN2, GPIO.LOW))
-	(GPIO.output(BIN1, GPIO.LOW))
-	(GPIO.output(BIN2, GPIO.HIGH))
-	(GPIO.output(STBY, GPIO.HIGH))
-	(GPIO.output(PWMA, GPIO.HIGH))
-	(GPIO.output(PWMB, GPIO.HIGH))
+    (GPIO.output(AIN1, GPIO.HIGH))
+    (GPIO.output(AIN2, GPIO.LOW))
+    (GPIO.output(BIN1, GPIO.HIGH))
+    (GPIO.output(BIN2, GPIO.LOW))
+    (GPIO.output(STBY, GPIO.HIGH))
+    (GPIO.output(PWMA, GPIO.HIGH))
+    (GPIO.output(PWMB, GPIO.HIGH))\
 
 def right():
-	(GPIO.output(AIN1, GPIO.LOW))
-	(GPIO.output(AIN2, GPIO.HIGH))
-	(GPIO.output(BIN1, GPIO.HIGH))
-	(GPIO.output(BIN2, GPIO.LOW))
-	(GPIO.output(STBY, GPIO.HIGH))
-	(GPIO.output(PWMA, GPIO.HIGH))
-	(GPIO.output(PWMB, GPIO.HIGH))
+    (GPIO.output(AIN1, GPIO.LOW))
+    (GPIO.output(AIN2, GPIO.HIGH))
+    (GPIO.output(BIN1, GPIO.LOW))
+    (GPIO.output(BIN2, GPIO.HIGH))
+    (GPIO.output(STBY, GPIO.HIGH))
+    (GPIO.output(PWMA, GPIO.HIGH))
+    (GPIO.output(PWMB, GPIO.HIGH))
 
 def off():
-	(GPIO.output(AIN1, GPIO.LOW))
-	(GPIO.output(AIN2, GPIO.LOW))
-	(GPIO.output(BIN1, GPIO.LOW))
-	(GPIO.output(BIN2, GPIO.LOW))
-	(GPIO.output(STBY, GPIO.LOW))
-	(GPIO.output(PWMA, GPIO.LOW))
-	(GPIO.output(PWMB, GPIO.LOW))
+    (GPIO.output(AIN1, GPIO.LOW))
+    (GPIO.output(AIN2, GPIO.LOW))
+    (GPIO.output(BIN1, GPIO.LOW))
+    (GPIO.output(BIN2, GPIO.LOW))
+    (GPIO.output(STBY, GPIO.LOW))
+    (GPIO.output(PWMA, GPIO.LOW))
+    (GPIO.output(PWMB, GPIO.LOW))
 
 
 try:
@@ -138,25 +141,25 @@ try:
     # Loop indefinitely
     while True:
         # Get the currently pressed keys on the keyboard
-	PygameHandler(pygame.event.get())
-	if hadEvent or regularUpdate:
+        PygameHandler(pygame.event.get())
+        if hadEvent or regularUpdate:
 
-	    hadEvent = False
-	    #driveCommands = ['X', 'X', 'X', 'X']  
-	    if moveQuit:
-	        break
-	    elif moveUp:
-	        forward() 
-	    elif moveDown:
-	        reverse()
-	    elif moveLeft:
-	        left()
-	    elif moveRight:
-	        right()
-	    else:
-	        off()
+            hadEvent = False
+            #driveCommands = ['X', 'X', 'X', 'X']  
+            if moveQuit:
+                break
+            elif moveUp:
+                forward() 
+            elif moveDown:
+                reverse()
+            elif moveLeft:
+                left()
+            elif moveRight:
+                right()
+            else:
+                off()
 
-	time.sleep(interval)
+        time.sleep(interval)
 # Send the drive commands
 except KeyboardInterrupt:
     print "(exit goodbye ciao)"
