@@ -47,7 +47,7 @@ sudo apt-get install vlc
 raspivid -o - -t 0 -n -w 1920 -h 1080 -fps 12 | cvlc -vvv stream:///dev/stdin --sout '#rtp{sdp=rtsp://:8554/}' :demux=h264
 raspivid -o - -t 0 -n -w 1280 -h 720 -fps 30 | cvlc -vvv stream:///dev/stdin --sout '#rtp{sdp=rtsp://:8554/}' :demux=h264
  	
-##MPEG Streamer Camera Setup
+##MPEG Streamer Camera Setup - This one I think works the best (double check)
 
 http://blog.cudmore.io/post/2015/03/15/Installing-mjpg-streamer-on-a-raspberry-pi/
 ### commands
@@ -86,3 +86,13 @@ tar -zxvf motion-mmal-lowflyerUK-20151114.tar.gz
 ./motion -c motion-mmalcam-both.conf
 
 
+#It's time to control from the web
+
+##Attempt One
+Folling instructions from here https://www.dexterindustries.com/BrickPi/projects/browserbot/
+Needed sudo pip install -U future to install builtins as not using robot pi build
+This didn't work
+
+
+##Attempt Two
+http://www.instructables.com/id/Easy-NodeJS-WebSockets-LED-Controller-for-Raspberr/
